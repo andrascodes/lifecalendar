@@ -66,19 +66,26 @@ class App extends Component {
   handleCreateCalendarButtonClick = async (event) => {
     event.preventDefault()
 
-    const result = await this.DataAPI.getLifeExpectancy(this.state.gender, this.state.birthDate, this.state.country)
-    const lifeExpectancy = Math.floor(Number(result.total_life_expectancy))
-
-    Storage.save({
-      name: this.state.name,
-      birthDate: this.state.birthDate,
-      lifeExpectancy: lifeExpectancy
-    })
-
-    this.setState(state => ({
-      lifeExpectancy,
-      generateCalendar: true
-    }))
+    try {
+      const result = await this.DataAPI.getLifeExpectancy(this.state.gender, this.state.birthDate, this.state.country)
+      const lifeExpectancy = Math.floor(Number(result.total_life_expectancy))
+  
+      Storage.save({
+        name: this.state.name,
+        birthDate: this.state.birthDate,
+        lifeExpectancy: lifeExpectancy
+      })
+  
+      this.setState(state => ({
+        lifeExpectancy,
+        generateCalendar: true
+      }))
+    }
+    catch(error) {
+      this.setState(state => ({
+        generateCalendar: true
+      }))
+    }
 
   }
 
