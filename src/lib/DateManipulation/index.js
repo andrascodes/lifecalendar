@@ -18,9 +18,9 @@ const isWeekBeforeNow = (year, week) => {
   }
 }
 
-const getWeeksRemaining = (birthTimestamp, lifeexpectancy) => {
+const getWeeksRemaining = (birthTimestamp, lifeExpectancy) => {
   const birthYear = new Date(birthTimestamp).getFullYear()
-  const lastYear = birthYear + lifeexpectancy
+  const lastYear = birthYear + lifeExpectancy
   const currentYear = new Date(Date.now()).getFullYear()
   
   return ((lastYear - currentYear) * 52) + weeksInYear(Date.now())

@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+#LoginForm {
+  display: flex;
+  flex-direction: column;
+}
+
 #Calendar {
   display: flex;
   flex-wrap: wrap;
