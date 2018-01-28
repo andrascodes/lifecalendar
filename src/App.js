@@ -82,6 +82,13 @@ class App extends Component {
       }))
     }
     catch(error) {
+
+      Storage.save({
+        name: this.state.name,
+        birthDate: this.state.birthDate,
+        lifeExpectancy: this.state.lifeExpectancy
+      })
+
       this.setState(state => ({
         generateCalendar: true
       }))
