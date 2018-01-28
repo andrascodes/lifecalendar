@@ -2,27 +2,40 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#Calendar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  width: 1120px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.Year {
+
 }
 
-.App-title {
-  font-size: 1.5em;
+.YearTitle {
+  font-size: 0.8rem;
 }
 
-.App-intro {
-  font-size: large;
+.WeeksContainer {
+  display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(4, 5px);
+  margin: 5px 10px 10px 10px;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.Week {
+  width: 5px;
+  height: 5px;
+  background-color: green;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.spent {
+  background-color: red;
 }

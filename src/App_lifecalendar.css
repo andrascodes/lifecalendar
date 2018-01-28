@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+  background-color: #bdc3c7
+}
+
+#Calendar {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: space-evenly;
+  min-height: 100vh; */
+  min-width: 900px;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.Year {
+  /* flex: 1 1 5%; */
+  display: inline-block
+}
+
+.YearTitle {
+  display: none;
+}
+
+.WeeksContainer {
+  /* display: grid;
+  grid-gap: 2px;
+  grid-template-columns: repeat(4, 5px);
+  margin: 10px;
+  justify-content: center; */
+}
+
+.Week {
+  width: 6px;
+  height: 6px;
+  margin: 2px;
+  background-color: #7f8c8d;
+  border: 1px solid #7f8c8d;
+  border-radius: 15%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.spent {
+  background-color: transparent;
+  border: 1px solid #7f8c8d;
+  border-radius: 15%;
+}
