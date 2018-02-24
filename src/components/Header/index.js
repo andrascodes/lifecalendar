@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Header.css'
 
-const Header = ({ name, numberOfDays }) => {
+const Header = ({ name, numberOfDays, birthDate }) => {
 
   const emojiMap = (days) => {
     if(days >= 25800) {
@@ -47,7 +47,11 @@ const Header = ({ name, numberOfDays }) => {
   }
 
   const getTimeleftMessage = numberOfDays => {
-    if(numberOfDays <= 0) {
+    
+    if(birthDate > Date.now()) {
+      return 'This is your future.'
+    }
+    else if(numberOfDays <= 0) {
       return 'This is your past.'
     }
     else {

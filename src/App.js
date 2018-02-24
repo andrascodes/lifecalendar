@@ -10,7 +10,7 @@ class App extends Component {
 
     this.state = {
       name: 'there',
-      birthDate: new Date('1992-10-25').valueOf()
+      birthDate: new Date('1992-02-25').valueOf()
     }
   }
 
@@ -27,12 +27,14 @@ class App extends Component {
       <div className="App">
         <Header 
           name={this.state.name}
+          birthDate={this.state.birthDate}
           numberOfDays={numberOfDays}
         />
         <Calendar 
           birthDate={this.state.birthDate}
         />
         <Footer 
+          birthDate={this.state.birthDate}
           numberOfDays={numberOfDays}
         />
       </div>

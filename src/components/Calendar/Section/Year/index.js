@@ -4,7 +4,9 @@ import './Year.css'
 
 const Year = ({ year, birthDate, isBirthYear, spent, current, left, showTitle }) => {
 
-  if(isBirthYear === true && current !== true) {
+  const currentYear = new Date(Date.now()).getFullYear()
+
+  if(isBirthYear === true && current !== true && year < currentYear) {
     
     const birthYear = new Date(birthDate).getFullYear()
     const firstDayOfYear = new Date(`${birthYear}-01-01T00:00:00.000Z`).valueOf()
