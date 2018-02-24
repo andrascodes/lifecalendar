@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Year.css'
 
-const Year = ({ year, birthDate, isBirthYear, spent, current, left }) => {
+const Year = ({ year, birthDate, isBirthYear, spent, current, left, showTitle }) => {
 
   if(isBirthYear === true) {
     
@@ -49,7 +49,7 @@ const Year = ({ year, birthDate, isBirthYear, spent, current, left }) => {
 
     return (
       <div className="Year YearProgressContainer YearLeft">
-        <div className="YearTitle" style={titleStyle}>
+        <div className="YearTitle HighlightYearTitle" style={titleStyle}>
           {year}
         </div>
         <div className="YearProgress" style={{ width: `${percentage}%`, height: '100%' }}></div>
@@ -68,9 +68,17 @@ const Year = ({ year, birthDate, isBirthYear, spent, current, left }) => {
   }
 
   if(left === true) {
+    const isDimTitle = (showTitle) => {
+      if(showTitle === false) {
+        return 'DimYearTitle'
+      }
+      else {
+        return ''
+      }
+    }
     return (
       <div className="Year YearLeft YearTitleContainer">
-        <div className="YearTitle">
+        <div className={`YearTitle ${isDimTitle(showTitle)}`}>
           {year}
         </div>
       </div>

@@ -4,7 +4,7 @@ import './Section.css'
 
 import Year from './Year'
 
-const Section = ({ years, birthDate }) => {
+const Section = ({ years, birthDate, lastYear }) => {
 
   const currentDate = Date.now()
   const birthYear = new Date(birthDate).getFullYear()
@@ -29,6 +29,12 @@ const Section = ({ years, birthDate }) => {
     }
     else {
       yearProperties.left = true
+      if(i % 5 !== 0 && year !== lastYear) {
+        yearProperties.showTitle = false
+      }
+      else {
+        yearProperties.showTitle = true
+      }
     }
 
     return (

@@ -10,16 +10,24 @@
   align-items: center;
 }
 
-
 .YearTitle {
   position: absolute;
   font-size: 0.75em;
+  cursor: default;
+}
+
+.DimYearTitle {
+  color: rgb(41, 46, 47);
+}
+
+.HighlightYearTitle {
+  color: white;
 }
 
 .YearSpent {
-  /* background-color: transparent;
-  border-right: 0.01em solid rgba(158, 47, 35, 0.4);
-  border-bottom: 0.01em solid rgba(158, 47, 35, 0.5); */
+  /* background-color: transparent; */
+  border-right: 0.01em solid white;
+  border-bottom: 0.01em solid white;
 }
 
 .YearSpent .YearTitle {
@@ -34,7 +42,7 @@
 
 .YearLeft {
   background-color: #2d3436;
-  color: white;
+  color: rgb(115, 115, 115);
   border-right: 0.01em solid rgba(33, 39, 41, 0.4);
   border-bottom: 0.01em solid rgba(33, 39, 41, 0.5);
 }
@@ -57,6 +65,14 @@
 
 .YearSpent:hover .YearTitle {
   color: rgba(0, 0, 0, 0.75)
+}
+
+.YearLeft:hover .YearTitle {
+  color: rgb(115, 115, 115);
+}
+
+.YearLeft:hover .HighlightYearTitle {
+  color: white;
 }
 
 /* @media (min-width: 768px) {

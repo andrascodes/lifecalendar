@@ -46,7 +46,7 @@ const Header = ({ name, numberOfDays }) => {
   const formatNumberOfDays = numberOfDays => {
     const thousands = Math.floor(numberOfDays / 1000)
     const remainder = numberOfDays % 1000
-    return `${thousands}.${remainder}`
+    return `${thousands} ${remainder}`
   }
 
   return (
