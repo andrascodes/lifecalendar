@@ -1,12 +1,7 @@
 .Year {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid black;
   flex: 1 1;
-}
-
-.Year:last-child {
-  border: none;
 }
 
 .YearTitleContainer {
@@ -17,10 +12,14 @@
 
 .YearSpent {
   background-color: #c0392b;
+  border-right: 0.01em solid rgba(158, 47, 35, 0.4);
+  border-bottom: 0.01em solid rgba(158, 47, 35, 0.5);
 }
 
 .YearLeft {
   background-color: #27ae60;
+  border-right: 0.01em solid rgba(28, 121, 67, 0.4);
+  border-bottom: 0.01em solid rgba(28, 121, 67, 0.5);
 }
 
 .YearProgress{
