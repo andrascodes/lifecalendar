@@ -14,10 +14,10 @@ const Year = ({ year, birthDate, isBirthYear, spent, current, left }) => {
 
     const titleStyle = {}
     if(percentage <= 50) {
-      titleStyle.right = '1.4em'
+      titleStyle.right = '2.2em'
     }
     else {
-      titleStyle.left = '1.4em'
+      titleStyle.left = '2.2em'
     }
 
     return (
@@ -41,10 +41,10 @@ const Year = ({ year, birthDate, isBirthYear, spent, current, left }) => {
 
     const titleStyle = {}
     if(percentage <= 50) {
-      titleStyle.right = '1.4em'
+      titleStyle.right = '2.2em'
     }
     else {
-      titleStyle.left = '1.4em'
+      titleStyle.left = '2.2em'
     }
 
     return (

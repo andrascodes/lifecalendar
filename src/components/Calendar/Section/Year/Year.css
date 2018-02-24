@@ -2,44 +2,61 @@
   display: flex;
   align-items: center;
   flex: 1 1;
+  position: relative;
 }
 
 .YearTitleContainer {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
+
+.YearTitle {
+  position: absolute;
+  font-size: 0.75em;
+}
+
 .YearSpent {
-  background-color: #c0392b;
+  /* background-color: transparent;
   border-right: 0.01em solid rgba(158, 47, 35, 0.4);
-  border-bottom: 0.01em solid rgba(158, 47, 35, 0.5);
+  border-bottom: 0.01em solid rgba(158, 47, 35, 0.5); */
+}
+
+.YearSpent .YearTitle {
+  left: 2.2em;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.05)
+}
+
+.YearLeft .YearTitle {
+  right: 2.2em;
 }
 
 .YearLeft {
-  background-color: #27ae60;
-  border-right: 0.01em solid rgba(28, 121, 67, 0.4);
-  border-bottom: 0.01em solid rgba(28, 121, 67, 0.5);
+  background-color: #2d3436;
+  color: white;
+  border-right: 0.01em solid rgba(33, 39, 41, 0.4);
+  border-bottom: 0.01em solid rgba(33, 39, 41, 0.5);
 }
 
 .YearProgress{
-  background-color: #c0392b;
+  background-color: white;
   flex-shrink: 0;
   flex-grow: 0;
 }
 
 .YearNotAlive {
-  background-color: #7f8c8d;
+  background-color: white;
   flex-shrink: 0;
   flex-grow: 0;
 }
 
-.YearProgressContainer {
-  position: relative;
+.YearSpent:hover {
+  background-color: #ecf0f1;
 }
 
-.YearTitle {
-  position: absolute;
+.YearSpent:hover .YearTitle {
+  color: rgba(0, 0, 0, 0.75)
 }
 
 /* @media (min-width: 768px) {

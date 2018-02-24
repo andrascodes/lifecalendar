@@ -13,10 +13,20 @@ class App extends Component {
     }
   }
 
+  getNumberOfDaysLeft = (birthDate) => {
+    const birthYear = new Date(birthDate).getFullYear()
+    const lastDayInDays = new Date(`${birthYear + 79}-12-31`).valueOf()/1000/3600/24
+    const nowInDays = Date.now()/1000/3600/24
+    return Math.floor(lastDayInDays - nowInDays)
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+          name={'András'}
+          numberOfDays={this.getNumberOfDaysLeft(this.state.birthDate)}
+        />
         <Calendar 
           birthDate={this.state.birthDate}
         />
