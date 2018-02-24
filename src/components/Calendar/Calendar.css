@@ -1,3 +1,11 @@
 .Calendar {
+  display: flex;
   flex: 1 1;
 }
+
+/* @media (min-width: 768px) {
+  
+  .Calendar {
+    flex-direction: column;
+  }
+} */

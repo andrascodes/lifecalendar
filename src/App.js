@@ -9,7 +9,7 @@ class App extends Component {
     super()
 
     this.state = {
-      birthYear: 1992
+      birthDate: new Date('1992-10-25').valueOf()
     }
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Calendar 
-          birthYear={this.state.birthYear}
+          birthDate={this.state.birthDate}
         />
         <Footer />
       </div>

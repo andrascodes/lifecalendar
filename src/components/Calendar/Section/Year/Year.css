@@ -1,0 +1,53 @@
+.Year {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  flex: 1 1;
+}
+
+.Year:last-child {
+  border: none;
+}
+
+.YearTitleContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.YearSpent {
+  background-color: #c0392b;
+}
+
+.YearLeft {
+  background-color: #27ae60;
+}
+
+.YearProgress{
+  background-color: #c0392b;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.YearNotAlive {
+  background-color: #7f8c8d;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.YearProgressContainer {
+  position: relative;
+}
+
+.YearTitle {
+  position: absolute;
+}
+
+/* @media (min-width: 768px) {
+
+  .Year {
+    flex-direction: row;
+    border-bottom: none;
+    border-right: 1px solid black;
+  }
+} */
