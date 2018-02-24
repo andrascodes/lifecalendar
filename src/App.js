@@ -9,6 +9,7 @@ class App extends Component {
     super()
 
     this.state = {
+      name: 'there',
       birthDate: new Date('1992-10-25').valueOf()
     }
   }
@@ -21,16 +22,19 @@ class App extends Component {
   }
 
   render() {
+    const numberOfDays = this.getNumberOfDaysLeft(this.state.birthDate)
     return (
       <div className="App">
         <Header 
-          name={'András'}
-          numberOfDays={this.getNumberOfDaysLeft(this.state.birthDate)}
+          name={this.state.name}
+          numberOfDays={numberOfDays}
         />
         <Calendar 
           birthDate={this.state.birthDate}
         />
-        <Footer />
+        <Footer 
+          numberOfDays={numberOfDays}
+        />
       </div>
     );
   }

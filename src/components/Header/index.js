@@ -41,20 +41,27 @@ const Header = ({ name, numberOfDays }) => {
     else if(days >= 280) {
       return `🕛`;
     }
+    else {
+      return `🕛`;
+    }
   }
 
-  const formatNumberOfDays = numberOfDays => {
-    const thousands = Math.floor(numberOfDays / 1000)
-    const remainder = numberOfDays % 1000
-    return `${thousands} ${remainder}`
+  const getTimeleftMessage = numberOfDays => {
+    if(numberOfDays <= 0) {
+      return 'This is your past.'
+    }
+    else {
+      const thousands = Math.floor((numberOfDays / 1000))
+      const remainder = numberOfDays % 1000
+      return `You have ${thousands} ${remainder} days left.`
+    }
   }
 
   return (
     <div className="Header">
       <h1>
-        {`Hi, ${name}! 
-          You have ${formatNumberOfDays(numberOfDays)} days left. 
-          ${emojiMap(numberOfDays)}`
+        {
+          `Hi, ${name}! ${getTimeleftMessage(numberOfDays)} ${emojiMap(numberOfDays)}`
         }
       </h1>
     </div>
