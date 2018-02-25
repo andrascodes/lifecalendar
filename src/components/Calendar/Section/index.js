@@ -9,7 +9,6 @@ const Section = ({ years, birthDate, lastYear }) => {
   const currentDate = Date.now()
   const birthYear = new Date(birthDate).getFullYear()
   const renderYears = (years, currentDate) => years.map((year, i) => {
-    
     const yearProperties = {
       key: `year-${year}`,
       birthDate,

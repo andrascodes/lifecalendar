@@ -1,5 +1,10 @@
 export const getToday = () => {
   const now = new Date(Date.now())
-  const today = new Date(`${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`)
-  return today.valueOf()
+  const thisMonth = now.getMonth()
+  if(thisMonth < 10) {
+    return new Date(`${now.getFullYear()}-0${thisMonth + 1}-${now.getDate()}`).valueOf()
+  }
+  else {
+    return new Date(`${now.getFullYear()}-${thisMonth + 1}-${now.getDate()}`).valueOf()
+  }
 }
