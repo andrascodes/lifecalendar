@@ -53,7 +53,8 @@ class App extends Component {
       this.setState(state => ({
         name: this.nameInput.controlEl.value,
         birthDate: newBirthDate.valueOf(),
-        headerEdit: false
+        headerEdit: false,
+        invalidDate: false
       }))
     }
     else {
