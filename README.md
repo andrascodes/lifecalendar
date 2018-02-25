@@ -1,5 +1,8 @@
 # lifecalendar
 
+### Future features:
+* Different colour schemes
+* Trophy shelf: creating a list of emojis which represent your accomplishments for the given year
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
