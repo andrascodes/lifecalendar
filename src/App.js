@@ -5,6 +5,7 @@ import './App.css'
 import { Header, Calendar, Footer } from './components'
 
 import { getToday } from './utils/DateManipulation'
+import { saveUserInfo, loadUserInfo } from './lib/DataPersistingApi'
 
 class App extends Component {
   constructor() {
@@ -15,6 +16,16 @@ class App extends Component {
       birthDate: getToday(),
       headerEdit: false,
       invalidDate: false
+    }
+  }
+
+  componentDidMount() {
+    const { name, birthDate } = loadUserInfo()
+    if(name !== undefined && birthDate !== undefined) {
+      this.setState(state => ({
+        name,
+        birthDate
+      }))
     }
   }
 
@@ -51,9 +62,13 @@ class App extends Component {
       newBirthDate.getDate() === day &&
       newBirthDate.valueOf() <= Date.now()
     ) {
+      const name = this.nameInput.controlEl.value
+      const birthDate = newBirthDate.valueOf()
+      saveUserInfo({ name, birthDate })
+
       this.setState(state => ({
-        name: this.nameInput.controlEl.value,
-        birthDate: newBirthDate.valueOf(),
+        name,
+        birthDate,
         headerEdit: false,
         invalidDate: false
       }))
