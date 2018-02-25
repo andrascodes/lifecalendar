@@ -1,0 +1,9 @@
+.HeaderName:hover {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}
+
+.HeaderTime:hover {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+}

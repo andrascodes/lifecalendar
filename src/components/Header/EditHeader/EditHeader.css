@@ -1,0 +1,31 @@
+.EditHeader {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.nameInput {
+  display: flex;
+  align-items: center;
+}
+
+.birthDayInput {
+  display: flex;
+}
+
+.birthDayInput .mui-textfield > input {
+  min-width: 5em;
+}
+
+.mui-textfield > input, .mui-select > select {
+  height: 32px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}

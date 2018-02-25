@@ -2,26 +2,27 @@ import React from 'react';
 
 import './Footer.css'
 
+import { getToday } from '../../utils/DateManipulation'
+
 const Footer = ({ numberOfDays, birthDate }) => {
 
-  if(birthDate > Date.now()) {
+  if(birthDate === getToday()) {
     return (
       <div className="Footer">
-        <h1>It's gonna be a great one! 😉</h1>
-      </div>
-    )
-  }
-  else if(numberOfDays <= 0) {
-    return (
-      <div className="Footer">
-        <h1>What a great life! 😲</h1>
+        <h1>
+          {`Tip: Click the number of days in the header to set your details. `}
+          <span role="img" aria-label="" aria-labelledby="">😉</span>
+        </h1>
       </div>
     )
   }
   else {
     return (
       <div className="Footer">
-        <h1>Make'em count! 😉</h1>
+        <h1>
+          {`Make'em count! `}
+          <span role="img" aria-label="" aria-labelledby="">😉</span>
+        </h1>
       </div>
     )
   }

@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import './App.css';
+import './App.css'
 
 import { Header, Calendar, Footer } from './components'
+
+import { getToday } from './utils/DateManipulation'
 
 class App extends Component {
   constructor() {
@@ -10,7 +12,54 @@ class App extends Component {
 
     this.state = {
       name: 'there',
-      birthDate: new Date('1992-02-25').valueOf()
+      birthDate: getToday(),
+      headerEdit: false,
+      invalidDate: false
+    }
+  }
+
+  addRefsToDOMElement = (elementName) => (element) => {
+    this[elementName] = element
+  }
+
+  handleTextfieldClickInHeader = () => {
+    this.setState(state => ({
+      headerEdit: true
+    }))
+  }
+
+  handleEnterPressInHeader = (e) => {
+    e.preventDefault()
+
+    const birthObj = {
+      year: this.yearInput.controlEl.value,
+      month: this.monthSelector.controlEl.value,
+      day: this.dayInput.controlEl.value
+    }
+    if(Number(birthObj.month) < 10) {
+      birthObj.month = `0${birthObj.month}`
+    }
+
+    const newBirthDate = new Date(`${birthObj.year}-${birthObj.month}-${birthObj.day}`)
+    const year = Number(birthObj.year)
+    const month = Number(birthObj.month)
+    const day = Number(birthObj.day)
+
+    if(
+      newBirthDate.getFullYear() === year &&
+      newBirthDate.getMonth() === month - 1 &&
+      newBirthDate.getDate() === day
+    ) {
+      this.setState(state => ({
+        name: this.nameInput.controlEl.value,
+        birthDate: newBirthDate.valueOf(),
+        headerEdit: false
+      }))
+    }
+    else {
+      this.setState(state => ({
+        invalidDate: true
+      }))
     }
   }
 
@@ -26,6 +75,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header 
+          edit={this.state.headerEdit}
+          invalidDate={this.state.invalidDate}
+          onTextfieldClick={this.handleTextfieldClickInHeader}
+          onEnterPress={this.handleEnterPressInHeader}
+          addRefsToDOMElement={this.addRefsToDOMElement}
           name={this.state.name}
           birthDate={this.state.birthDate}
           numberOfDays={numberOfDays}
