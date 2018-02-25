@@ -25,15 +25,19 @@
 }
 
 .YearSpent {
-  /* background-color: transparent; */
-  border-right: 0.01em solid white;
-  border-bottom: 0.01em solid white;
+  background-color: #ecf0f1;
+  border-right: 0.01em solid #e0e5e6;
+  border-bottom: 0.01em solid #e0e5e6;
 }
 
 .YearSpent .YearTitle {
   left: 2.2em;
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.05)
+}
+
+.YearSpent:last-child {
+  border-bottom: none;
 }
 
 .YearLeft .YearTitle {
@@ -48,7 +52,7 @@
 }
 
 .YearProgress{
-  background-color: white;
+  background-color: #ecf0f1;
   flex-shrink: 0;
   flex-grow: 0;
 }
@@ -60,7 +64,7 @@
 }
 
 .YearSpent:hover {
-  background-color: #ecf0f1;
+  background-color: #f5f6fa;
 }
 
 .YearSpent:hover .YearTitle {
