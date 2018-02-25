@@ -48,7 +48,8 @@ class App extends Component {
     if(
       newBirthDate.getFullYear() === year &&
       newBirthDate.getMonth() === month - 1 &&
-      newBirthDate.getDate() === day
+      newBirthDate.getDate() === day &&
+      newBirthDate.valueOf() <= Date.now()
     ) {
       this.setState(state => ({
         name: this.nameInput.controlEl.value,

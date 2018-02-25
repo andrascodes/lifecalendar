@@ -4,7 +4,7 @@ import './EditHeader.css'
 
 import 'muicss/dist/css/mui.css'
 
-import { Input, Select, Option } from 'muicss/react'
+import { Input, Select, Option, Button } from 'muicss/react'
 
 class EditHeader extends Component {
   
@@ -60,7 +60,7 @@ class EditHeader extends Component {
               invalid={invalidDate}
             />
           </div>
-          <button type="submit" style={{ display: 'none' }}></button>
+          <Button type="submit" variant="flat" size="small">OK</Button>
         </form>
     );
   }

@@ -47,44 +47,27 @@ const DisplayHeader = ({ name, birthDate, numberOfDays, onTextfieldClick }) => {
   }
 
   const getTimeleftMessage = numberOfDays => {
-    
-    if(birthDate > Date.now()) {
-      return (
-        <span className="TimeLeftMessage">
-          This is your <span className="HeaderTime">future</span>.
-        </span>
-      )
-    }
-    else if(numberOfDays <= 0) {
-      return (
-        <span className="TimeLeftMessage">
-          This is your <span className="HeaderTime">past</span>.
-        </span>
-      )
-    }
-    else {
-      const formatDays = (numberOfDays) => {
-        const numberOfDaysStr = `${numberOfDays}`
-        if(numberOfDaysStr.length > 4) {
-          const thousands = numberOfDaysStr.substring(0, numberOfDaysStr.length - 3)
-          const remainder = numberOfDaysStr.substring(numberOfDaysStr.length - 3)
-          return `${thousands} ${remainder}`
-        }
-        else {
-          return numberOfDaysStr
-        }
+    const formatDays = (numberOfDays) => {
+      const numberOfDaysStr = `${numberOfDays}`
+      if(numberOfDaysStr.length > 4) {
+        const thousands = numberOfDaysStr.substring(0, numberOfDaysStr.length - 3)
+        const remainder = numberOfDaysStr.substring(numberOfDaysStr.length - 3)
+        return `${thousands} ${remainder}`
       }
-
-      return (
-        <span className="TimeLeftMessage">
-          You have&nbsp;
-          <span className="HeaderTime" onClick={onTextfieldClick}>
-            {formatDays(numberOfDays)} days
-          </span>
-          &nbsp;left.
-        </span>
-      )
+      else {
+        return numberOfDaysStr
+      }
     }
+
+    return (
+      <span className="TimeLeftMessage">
+        You have&nbsp;
+        <span className="HeaderTime" onClick={onTextfieldClick}>
+          {formatDays(numberOfDays)} days
+        </span>
+        &nbsp;left.
+      </span>
+    )
   }
 
   return (
