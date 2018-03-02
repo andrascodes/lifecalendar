@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import ReactGA from 'react-ga'
+
 import './App.css'
 
 import { Header, Calendar, Footer } from './components'
@@ -17,6 +19,10 @@ class App extends Component {
       headerEdit: false,
       invalidDate: false
     }
+
+    // Initialize Google Analytics
+    ReactGA.initialize('UA-114993218-1');
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   componentDidMount() {
