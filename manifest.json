@@ -2,18 +2,14 @@
   "short_name": "Lifecalendar",
   "name": "Lifecalendar Extension",
   "manifest_version": 2,
-  "browser_action": {
-    "default_icon": "favicon.ico",
-    "default_title": "Lifecalendar"
-  },
-  "version": "1.0",
-  "permissions" : ["management"],
-  "chrome_url_overrides" : {
-      "newtab": "index.html"
-  },
   "icons": { 
     "16": "favicon16.ico",
     "48": "favicon48.ico",
-   "128": "favicon128.ico" 
-  }
+    "128": "favicon128.ico" 
+  },
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com/ga.js; object-src 'self'",
+  "version": "1.0"
 }
