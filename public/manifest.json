@@ -11,5 +11,5 @@
     "newtab": "index.html"
   },
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com/ga.js; object-src 'self'",
-  "version": "1.0"
+  "version": "0.1.0"
 }
