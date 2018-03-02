@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ReactGA from 'react-ga'
+import GoogleAnalytics from './utils/GoogleAnalytics'
 
 import './App.css'
 
@@ -20,12 +20,13 @@ class App extends Component {
       invalidDate: false
     }
 
-    // Initialize Google Analytics
-    ReactGA.initialize('UA-114993218-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   componentDidMount() {
+
+    GoogleAnalytics.initialize()
+    GoogleAnalytics.pageView()
+
     const { name, birthDate } = loadUserInfo()
     if(name !== undefined && birthDate !== undefined) {
       this.setState(state => ({
