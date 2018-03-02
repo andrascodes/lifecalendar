@@ -6,7 +6,7 @@ import './App.css'
 
 import { Header, Calendar, Footer } from './components'
 
-import { getToday } from './utils/DateManipulation'
+import { getToday, formatDate } from './utils/DateManipulation'
 import { saveUserInfo, loadUserInfo } from './lib/DataPersistingApi'
 
 class App extends Component {
@@ -20,12 +20,12 @@ class App extends Component {
       invalidDate: false
     }
 
+    GoogleAnalytics.initialize()
+    GoogleAnalytics.pageView()
+
   }
 
   componentDidMount() {
-
-    GoogleAnalytics.initialize()
-    GoogleAnalytics.pageView()
 
     const { name, birthDate } = loadUserInfo()
     if(name !== undefined && birthDate !== undefined) {
@@ -54,25 +54,24 @@ class App extends Component {
       month: this.monthSelector.controlEl.value,
       day: this.dayInput.controlEl.value
     }
-    if(Number(birthObj.month) < 10) {
-      birthObj.month = `0${birthObj.month}`
-    }
 
-    const newBirthDate = new Date(`${birthObj.year}-${birthObj.month}-${birthObj.day}`)
-    const year = Number(birthObj.year)
-    const month = Number(birthObj.month)
-    const day = Number(birthObj.day)
+    const newBirthDate = new Date(formatDate({
+      year: Number(birthObj.year),
+      month: Number(birthObj.month),
+      day: Number(birthObj.day)
+    }))
 
     if(
-      newBirthDate.getFullYear() === year &&
-      newBirthDate.getMonth() === month - 1 &&
-      newBirthDate.getDate() === day &&
+      newBirthDate.getFullYear() === Number(birthObj.year) &&
+      newBirthDate.getMonth() === Number(birthObj.month) - 1 &&
+      newBirthDate.getDate() === Number(birthObj.day) &&
       newBirthDate.valueOf() <= Date.now()
     ) {
       const name = this.nameInput.controlEl.value
       const birthDate = newBirthDate.valueOf()
       saveUserInfo({ name, birthDate })
 
+      console.log(birthDate)
       this.setState(state => ({
         name,
         birthDate,
@@ -96,6 +95,7 @@ class App extends Component {
 
   render() {
     const numberOfDays = this.getNumberOfDaysLeft(this.state.birthDate)
+    
     return (
       <div className="App">
         <Header 

@@ -1,10 +1,32 @@
 export const getToday = () => {
   const now = new Date(Date.now())
-  const thisMonth = now.getMonth()
-  if(thisMonth < 10) {
-    return new Date(`${now.getFullYear()}-0${thisMonth + 1}-${now.getDate()}`).valueOf()
+  return new Date(formatDate({
+    year: now.getFullYear(), 
+    month: now.getMonth() + 1, 
+    day: now.getDate()
+  })).valueOf()
+}
+
+export const formatDate = ({ year, month, day }) => {
+  const date = {
+    year: `${Number(year)}`,
+    month: Number(month), 
+    day: Number(day), 
+  }
+
+  if(date.month < 10) {
+    date.month = `0${date.month}`
   }
   else {
-    return new Date(`${now.getFullYear()}-${thisMonth + 1}-${now.getDate()}`).valueOf()
+    date.month = `${date.month}`
   }
+
+  if(date.day < 10) {
+    date.day = `0${date.day}`
+  }
+  else {
+    date.day = `${date.day}`
+  }
+
+  return `${date.year}-${date.month}-${date.day}`
 }

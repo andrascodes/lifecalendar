@@ -28,4 +28,4 @@ const Footer = ({ numberOfDays, birthDate }) => {
   }
 }
 
-export default Footer;
+export default Footer
