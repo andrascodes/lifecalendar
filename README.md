@@ -1,4 +1,11 @@
-# lifecalendar
+# Lifecalendar
+
+A Google Chrome newtab extension and web app, which lets you gain perspective about your life every time you open it. The goal is to help you be focused on what matters to you in life, every time you interact with your browser. This starts by realizing that you're time is limited.
+
+### Installation
+* [Add it from the Chrome Web Store!](https://chrome.google.com/webstore/detail/lifecalendar-extension/icebmcdnlmgejfkplolagngalhpkjhan)
+* [Bookmark the web app!](https://andrewszucs.github.io/lifecalendar/)
+* Clone and install with NPM/Yarn!
 
 ### Future features:
 * Different colour schemes
